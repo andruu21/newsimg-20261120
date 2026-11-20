@@ -14,7 +14,7 @@ outlet attribution and a date-check note for stories first reported the day befo
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-`main.py` copies the committed `entry.png` (1024×1024, ~572 KB) to `$MAKEFUN_OUTPUT_DIR`
+`main.py` copies the committed `entry.png` (1024×1024, ~580 KB) to `$MAKEFUN_OUTPUT_DIR`
 (default `/output`). The image was generated offline by `build_front.py` at build time,
 so the runtime is fully deterministic: no network, no randomness, no wall clock.
 
