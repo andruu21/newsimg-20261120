@@ -305,19 +305,19 @@ d.text((M, aly), "ALSO ON FRIDAY 20 NOVEMBER — 14 MORE STORIES", font=serifb(1
 d.line([M, aly + 17 * S, PX - M, aly + 17 * S], fill=RULE, width=S)
 items = [
     ("GAZA", "11-year-old Mansour Nabhan dies of wounds from an Israeli quadcopter strike in Jabaliya.", "Democracy Now!"),
-    ("KYIV", "Ukraine's Kerch Bridge strikes: engineers say repairs could take Russia years.", "AP"),
+    ("BERLIN", "Merz says new Ukraine talks with Europe 'soon' after allies' meeting in the German capital.", "DW"),
     ("BRUSSELS", "UK-EU deal could add up to £5.1bn a year from food trade alone, says Cabinet Office.", "UK gov't"),
     ("TOKYO", "Nvidia guided Q4 to $130bn despite the slide; Jensen Huang resigned as CEO last week.", "Nvidia"),
     ("SEOUL", "Kospi enters bear territory; Taiwan curbs short selling to steady its market.", "Reuters"),
-    ("WASHINGTON", "Senate passes permitting reform 62-33, easing data-center and power builds.", "Democracy Now!"),
+    ("NEW YORK", "France asks for a UN Security Council meeting over Russia's strikes on Kyiv and Lviv.", "France MFA"),
     ("MINNEAPOLIS", "Somali American Uber driver critical after attack; Trump had said 'fight back'.", "Democracy Now!"),
     ("RIYADH", "Oil benchmarks down ~15% this month as Trump held off strikes on Iran.", "WSJ"),
     ("WELLINGTON", "Nicholls joins Phillips in a 216-run stand before Akash Deep strikes.", "ESPNcricinfo"),
-    ("HARGEISA", "Somaliland votes in its first nationwide election since 1960.", "Reuters"),
-    ("VILNIUS", "Baltic states finish synchronous grid switch to continental Europe.", "Bloomberg"),
-    ("GENEVA", "WHO reports cholera cases up 20% year over year across 30 countries.", "WHO"),
-    ("NEW DELHI", "India's supreme court hears mining-lease challenge in Odisha belt.", "LiveLaw"),
-    ("OSLO", "Nobel Peace Prize laureate calls for press protections in her lecture.", "NRK"),
+    ("GENEVA", "Save the Children: a record 1 in 4 children worldwide now live in conflict zones.", "Democracy Now!"),
+    ("MOGADISHU", "Protests back Somalia's expulsion of the UAE ambassador; court orders elections in 90 days.", "Africanews"),
+    ("WASHINGTON", "Jeffries will not block funding for Trump's Iran war in the December 11 package.", "Democracy Now!"),
+    ("LONDON", "Burnham's Brexit verdict: leaving the EU cost Britain 4% of GDP, says the OBR.", "Xinhua"),
+    ("LONDON", "UK farm exports to the EU fell over 30% in a decade, says the National Farmers' Union.", "gov.uk"),
 ]
 colw = (PX - 2 * M - 20 * S) / 2
 colh = (aly + 152 * S)  # approximate list bottom
