@@ -109,21 +109,21 @@ d.line([M, 134 * S, PX - M, 134 * S], fill=RULE, width=S)
 # ============================================================= stat band ====
 stats = [
     ("400+ drones", "and 110+ missiles in Russia's overnight barrage (AP)"),
-    ("300,000+", "evacuated in Odisha ahead of Cyclone Akvan (IMD)"),
-    ("−5.1%", "Nikkei 225, worst day in seven months (Nikkei)"),
-    ("$81.3bn", "Anthropic IPO raise — largest on record (Reuters)"),
-    ("2.2%", "Japan core inflation, October (Reuters)"),
-    ("51–48", "US Senate vote keeping Iran war powers (CNN)"),
+    ("300,000+ moved", "to shelters in Odisha ahead of Cyclone Akvan (IMD)"),
+    ("Nikkei −5.1%", "worst day in seven months (Nikkei)"),
+    ("$81.3bn IPO", "Anthropic raise — largest on record (Reuters)"),
+    ("CPI 2.2%", "Japan core inflation, October (Reuters)"),
+    ("Senate 51–48", "vote keeps Trump's Iran war powers (CNN)"),
 ]
 sy = 142 * S
 sw = (PX - 2 * M) / 6
 for i, (big, small) in enumerate(stats):
     x = M + i * sw
-    d.text((x, sy), big, font=serifb(19), fill=RED if i % 2 else INK)
-    yy = sy + 24 * S
-    for ln in wrap(small, serif(8.5), sw - 10 * S)[:3]:
-        d.text((x, yy), ln, font=serif(8.5), fill=MUTED)
-        yy += 11 * S
+    d.text((x, sy), big, font=serifb(15), fill=RED if i % 2 else INK)
+    yy = sy + 22 * S
+    for ln in wrap(small, serif(9.5), sw - 8 * S)[:3]:
+        d.text((x, yy), ln, font=serif(9.5), fill=MUTED)
+        yy += 12 * S
 d.line([M, sy + 62 * S, PX - M, sy + 62 * S], fill=RULE, width=S)
 
 # ============================================================= hero row =====
@@ -131,19 +131,26 @@ hy = 212 * S
 hh = 210 * S
 cw = (PX - 2 * M - 2 * 10 * S) / 3
 
-# hero 1: Kyiv night sky
+# hero 1: Kyiv night sky — skyline, rising missile trails, blast flashes
 x0 = M
 card(x0, hy, cw, hh)
 d.rectangle([x0 + 8 * S, hy + 8 * S, x0 + cw - 8 * S, hy + 88 * S], fill=NAVY)
-for i, (bx, by, ex, ey) in enumerate([(30, 84, 96, 22), (150, 86, 210, 26),
-                                      (250, 82, 300, 40)]):
+sky = [(8, 74), (26, 66), (44, 78), (62, 60), (80, 72), (98, 64), (116, 76),
+       (134, 70), (152, 62), (170, 76), (188, 58), (206, 72)]
+for bx, bh in sky:
+    d.rectangle([x0 + bx * S, hy + 88 * S - bh * S, x0 + (bx + 14) * S, hy + 88 * S],
+                fill=(40, 52, 72))
+    d.rectangle([x0 + (bx + 4) * S, hy + 88 * S - bh * S + 8 * S,
+                 x0 + (bx + 6) * S, hy + 88 * S], fill=(232, 168, 74))
+for (bx, by, ex, ey) in [(120, 88, 160, 30), (210, 88, 240, 38),
+                         (280, 88, 306, 46)]:
     d.line([x0 + bx * S, hy + by * S, x0 + ex * S, hy + ey * S],
            fill=(232, 140, 60), width=2 * S)
-# skyline
-sky = [(8, 74), (26, 66), (44, 78), (62, 60), (80, 72), (98, 64), (116, 76)]
-for i, (bx, bh) in enumerate(sky):
-    d.rectangle([x0 + bx * S, hy + 88 * S - bh * S, x0 + (bx + 12) * S, hy + 88 * S],
-                fill=(46, 60, 82))
+    d.ellipse([x0 + ex * S - 4 * S, hy + ey * S - 8 * S,
+               x0 + ex * S + 4 * S, hy + ey * S], fill=(240, 190, 90))
+for (gx, gy) in [(60, 20), (250, 16)]:
+    d.ellipse([x0 + gx * S, hy + gy * S, x0 + (gx + 12) * S, hy + (gy + 10) * S],
+              fill=(214, 88, 52))
 y = tag(x0 + 8 * S, hy + 94 * S, 1, "KYIV", "WAR")
 d.text((x0 + 8 * S, y), "Russia pounds Kyiv overnight,", font=serifb(13.5), fill=INK)
 d.text((x0 + 8 * S, y + 17 * S), "three Dnipro bridges hit", font=serifb(13.5), fill=INK)
